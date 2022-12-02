@@ -16,7 +16,8 @@ class CalorieCounting {
                     count = 0
                 }
             }
-            print(elvesCalorieIntake.max())
+            elvesCalorieIntake.sortDescending()
+            print(elvesCalorieIntake.take(3).sum())
         }
     }
 }
