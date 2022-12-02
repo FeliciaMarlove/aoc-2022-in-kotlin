@@ -1,3 +1,5 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import challenges.day01.CalorieCounting
+
+fun main() {
+    CalorieCounting.computeResult()
 }
