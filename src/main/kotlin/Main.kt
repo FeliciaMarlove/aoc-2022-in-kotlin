@@ -1,5 +1,5 @@
-import challenges.day01.CalorieCounting
+import challenges.day02.RockPaperScissors
 
 fun main() {
-    CalorieCounting.computeResult()
+    RockPaperScissors.computeResult()
 }
