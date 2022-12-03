@@ -9,18 +9,24 @@ class RucksackReorganization {
 
         fun computeResult() {
             var priority = 0
+            val group = mutableListOf<String>()
             File(input).forEachLine {
-                val rucksack1 = it.subSequence(0, it.length / 2)
-                val rucksack2 = it.subSequence(it.length / 2, it.length)
-                val duplicateChar = rucksack2.find { rucksack1.contains(it) }
-                priority += getAlphabeticalNmber(duplicateChar!!)
+                group.add(it)
+                if (group.size == 3) {
+                    val duplicateChar = group[0].find {
+                        group[1].contains(it)
+                                && group[2].contains(it)
+                    }
+                    priority += getAlphabeticalNmber(duplicateChar!!)
+                    group.removeAll(group)
+                }
             }
             println(priority)
         }
 
         private fun getAlphabeticalNmber(letter: Char): Int {
-            if (letter in 'A'..'Z') return(letter.code - 'A'.code + 27)
-            if (letter in 'a'..'z') return(letter.code - 'a'.code + 1)
+            if (letter in 'A'..'Z') return (letter.code - 'A'.code + 27)
+            if (letter in 'a'..'z') return (letter.code - 'a'.code + 1)
             return 0
         }
 
