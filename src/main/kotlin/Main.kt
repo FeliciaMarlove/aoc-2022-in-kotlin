@@ -1,5 +1,5 @@
-import challenges.day02.RockPaperScissors
+import challenges.day03.RucksackReorganization
 
 fun main() {
-    RockPaperScissors.computeResult()
+    RucksackReorganization.computeResult()
 }
