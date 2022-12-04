@@ -13,9 +13,7 @@ class CampCleanup {
                 val section1 = getSection(sections[0])
                 val section2 = getSection(sections[1])
 
-                if (section2.containsAll(section1)
-                    || section1.containsAll(section2)
-                ) count++
+                if (section2.any { section1.contains(it) }) count++
             }
             println(count)
         }
@@ -27,4 +25,3 @@ class CampCleanup {
         }
     }
 }
-
