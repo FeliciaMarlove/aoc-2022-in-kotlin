@@ -1,5 +1,5 @@
-import challenges.day03.RucksackReorganization
+import challenges.day04.CampCleanup
 
 fun main() {
-    RucksackReorganization.computeResult()
+    CampCleanup.computeResult()
 }
