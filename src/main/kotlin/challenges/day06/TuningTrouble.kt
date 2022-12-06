@@ -10,8 +10,12 @@ class TuningTrouble {
             var position = 0
             File(input).forEachLine {
                 for (i in 0 until it.toCharArray().size - 4) {
-                    if (listOf(it[i], it[i + 1], it[i + 2], it[i + 3]).toSet().size == 4) {
-                        position = i + 4
+                    val shifts = mutableListOf<Char>()
+                    for (j in 0..13) {
+                        shifts.add(it[i + j])
+                    }
+                    if (shifts.toSet().size == 14) {
+                        position = i + 14
                         break
                     }
                 }
