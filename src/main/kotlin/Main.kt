@@ -1,5 +1,5 @@
-import challenges.day04.CampCleanup
+import challenges.day06.TuningTrouble
 
 fun main() {
-    CampCleanup.computeResult()
+    TuningTrouble.computeResult()
 }
