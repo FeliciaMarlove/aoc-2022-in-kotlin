@@ -9,22 +9,27 @@ class TreetopTreeHouse {
         private const val input = "./src/main/kotlin/challenges/day08/input.txt"
 
         fun computeResult() {
-            var totalVisibleTrees = 0
             val lines: MutableList<List<Int>> = mutableListOf()
             File(input).forEachLine {
                 lines.add(it.map { it.digitToInt() }.toList())
             }
 
-            var forest = lines.mapIndexed { index, line ->
+            val forest: List<Set<Tree>> = lines.mapIndexed { index, line ->
                 line.mapIndexed { jindex, lineItem ->
                     Tree(index, jindex, lineItem)
                 }.toSet()
             }.toList()
 
+            val visibleTrees: MutableSet<Tree> = mutableSetOf()
 
-            totalVisibleTrees += forest.size * 2
-            totalVisibleTrees += (forest.get(0).size - 2) * 2
+            forest.forEachIndexed { index, trees ->
+                trees.forEach {
+                    if (it.first == 0 || it.second == 0) visibleTrees.add(it)
+                }
+
+            }
 
         }
     }
 }
+
