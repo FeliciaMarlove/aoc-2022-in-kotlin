@@ -2,6 +2,7 @@ package challenges.day08
 
 import java.io.File
 
+// Row, Column, Height
 typealias Tree = Triple<Int, Int, Int>
 
 class TreetopTreeHouse {
@@ -22,13 +23,17 @@ class TreetopTreeHouse {
 
             val visibleTrees: MutableSet<Tree> = mutableSetOf()
 
-            forest.forEachIndexed { index, trees ->
-                trees.forEach {
-                    if (it.first == 0 || it.second == 0) visibleTrees.add(it)
+            forest.forEach {
+                it.forEach {
+                    if (it.first == 0 || it.second == 0 || it.first == forest.lastIndex || it.second == forest[0]
+                            .size - 1
+                    )
+                        visibleTrees.add(it)
                 }
-
             }
-
+            
+            println(visibleTrees)
+            println(visibleTrees.size)
         }
     }
 }
