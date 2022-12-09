@@ -1,5 +1,7 @@
-import challenges.day06.TuningTrouble
+import challenges.day08.TreetopTreeHouse
+import challenges.day09.RopeBridge
 
 fun main() {
-    TuningTrouble.computeResult()
+    TreetopTreeHouse.computeResult()
+//    RopeBridge.computeResult()
 }
