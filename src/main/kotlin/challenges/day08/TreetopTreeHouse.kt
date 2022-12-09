@@ -23,6 +23,7 @@ class TreetopTreeHouse {
 
             val visibleTrees: MutableSet<Tree> = mutableSetOf()
 
+            // Add perimeter trees:
             forest.forEach {
                 it.forEach {
                     if (it.first == 0
@@ -32,6 +33,14 @@ class TreetopTreeHouse {
                     ) visibleTrees.add(it)
                 }
             }
+
+            // Check trees inside perimeter:
+
+            // TODO
+            // tree visibility => 4 directions (only one must be OK, not the 4 of them!)
+            // -> check all to the left -> (if not highest) check all to the right -> (if not highest) check all
+            // upwards -> (if not highest) check all downwards
+            // until -> downTo pour itérer dans l'autre sens
 
             println(visibleTrees)
             println(visibleTrees.size)
