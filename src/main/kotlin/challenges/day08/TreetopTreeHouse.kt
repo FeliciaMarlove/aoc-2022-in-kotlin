@@ -25,16 +25,19 @@ class TreetopTreeHouse {
 
             forest.forEach {
                 it.forEach {
-                    if (it.first == 0 || it.second == 0 || it.first == forest.lastIndex || it.second == forest[0]
-                            .size - 1
-                    )
-                        visibleTrees.add(it)
+                    if (it.first == 0
+                        || it.second == 0
+                        || it.first == forest.lastIndex
+                        || it.second == forest[0].size - 1
+                    ) visibleTrees.add(it)
                 }
             }
-            
+
             println(visibleTrees)
             println(visibleTrees.size)
         }
+
+
     }
 }
 
