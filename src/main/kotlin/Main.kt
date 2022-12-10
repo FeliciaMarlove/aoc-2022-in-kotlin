@@ -1,7 +1,5 @@
-import challenges.day08.TreetopTreeHouse
-import challenges.day09.RopeBridge
+import challenges.day10.CathodeRayTube
 
 fun main() {
-    TreetopTreeHouse.computeResult()
-//    RopeBridge.computeResult()
+    CathodeRayTube.computeResult()
 }
